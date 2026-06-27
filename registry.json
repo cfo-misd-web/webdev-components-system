@@ -8,7 +8,7 @@
       "type": "registry:component",
       "title": "Hello World",
       "description": "A starter component that verifies the registry is wired up correctly.",
-      "registryDependencies": ["button"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react"],
       "files": [
         {
           "path": "registry/ui/hello-world.tsx",
