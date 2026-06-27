@@ -5,18 +5,11 @@ import { InputGroup } from "@cloudflare/kumo";
 import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 import { createDebounce } from "@/lib/search-bar/validation";
 import { cn } from "@/lib/cn";
+import type { ScrollBehavior } from "@/lib/types";
 
 // =============================================================================
 // TYPES
 // =============================================================================
-
-/**
- * Controls scroll behavior when the URL param updates.
- * - `false` — no scroll reset, page stays in place (default)
- * - `true` — scrolls to top instantly on each update
- * - `"smooth"` — scrolls to top smoothly on each update
- */
-export type ScrollBehavior = false | true | "smooth";
 
 /**
  * Adapter interface for reading and writing URL search params.

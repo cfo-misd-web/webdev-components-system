@@ -18,6 +18,19 @@
       ]
     },
     {
+      "name": "types",
+      "type": "registry:lib",
+      "title": "Shared Types",
+      "description": "Shared TypeScript types used across registry components.",
+      "files": [
+        {
+          "path": "registry/lib/types.ts",
+          "type": "registry:lib",
+          "target": "~/lib/types.ts"
+        }
+      ]
+    },
+    {
       "name": "hello-world",
       "type": "registry:component",
       "title": "Hello World",
@@ -56,7 +69,7 @@
       "type": "registry:component",
       "title": "Search Bar",
       "description": "Search input that manages a URL search parameter. Router-agnostic via an adapter prop. Supports debouncing, clearable input, and server-side search callbacks.",
-      "registryDependencies": ["cn"],
+      "registryDependencies": ["cn", "types"],
       "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
       "files": [
         {
@@ -68,6 +81,26 @@
           "path": "registry/lib/search-bar/validation.ts",
           "type": "registry:lib",
           "target": "~/lib/search-bar/validation.ts"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "Pagination control that manages a page URL parameter. Router-agnostic via an adapter prop. Supports client-side and server-side pagination with optional scroll reset.",
+      "registryDependencies": ["cn", "types"],
+      "dependencies": ["@cloudflare/kumo", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/pagination.tsx"
+        },
+        {
+          "path": "registry/lib/pagination/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/pagination/validation.ts"
         }
       ]
     }

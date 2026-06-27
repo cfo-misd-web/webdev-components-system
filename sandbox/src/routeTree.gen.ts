@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestSearchRouteImport } from './routes/test-search'
 import { Route as TestPasswordRouteImport } from './routes/test-password'
+import { Route as TestPaginationRouteImport } from './routes/test-pagination'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiSplatRouteImport } from './routes/api.$'
 import { Route as ApiRpcSplatRouteImport } from './routes/api.rpc.$'
@@ -24,6 +25,11 @@ const TestSearchRoute = TestSearchRouteImport.update({
 const TestPasswordRoute = TestPasswordRouteImport.update({
   id: '/test-password',
   path: '/test-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestPaginationRoute = TestPaginationRouteImport.update({
+  id: '/test-pagination',
+  path: '/test-pagination',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,6 +55,7 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/test-pagination': typeof TestPaginationRoute
   '/test-password': typeof TestPasswordRoute
   '/test-search': typeof TestSearchRoute
   '/api/$': typeof ApiSplatRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/test-pagination': typeof TestPaginationRoute
   '/test-password': typeof TestPasswordRoute
   '/test-search': typeof TestSearchRoute
   '/api/$': typeof ApiSplatRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/test-pagination': typeof TestPaginationRoute
   '/test-password': typeof TestPasswordRoute
   '/test-search': typeof TestSearchRoute
   '/api/$': typeof ApiSplatRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/test-pagination'
     | '/test-password'
     | '/test-search'
     | '/api/$'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/test-pagination'
     | '/test-password'
     | '/test-search'
     | '/api/$'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/test-pagination'
     | '/test-password'
     | '/test-search'
     | '/api/$'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  TestPaginationRoute: typeof TestPaginationRoute
   TestPasswordRoute: typeof TestPasswordRoute
   TestSearchRoute: typeof TestSearchRoute
   ApiSplatRoute: typeof ApiSplatRoute
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/test-password'
       fullPath: '/test-password'
       preLoaderRoute: typeof TestPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/test-pagination': {
+      id: '/test-pagination'
+      path: '/test-pagination'
+      fullPath: '/test-pagination'
+      preLoaderRoute: typeof TestPaginationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  TestPaginationRoute: TestPaginationRoute,
   TestPasswordRoute: TestPasswordRoute,
   TestSearchRoute: TestSearchRoute,
   ApiSplatRoute: ApiSplatRoute,
