@@ -349,6 +349,21 @@ function resolvePart(
  *   }),
  * ```
  *
+ * **Accessibility — search results live region:** The SearchBar does not own
+ * the search results, so announcing result count changes to screen readers is
+ * the consumer's responsibility. Add an `aria-live="polite"` region near your
+ * results that updates when the result count changes:
+ *
+ * ```tsx
+ * <SearchBar adapter={adapter} paramName="search" />
+ *
+ * <p aria-live="polite" className="sr-only">
+ *   {query ? `${filteredResults.length} results found` : ""}
+ * </p>
+ *
+ * <ResultsList results={filteredResults} />
+ * ```
+ *
  * @example TanStack Router — client-side
  * ```tsx
  * const router = useRouter()
@@ -466,7 +481,11 @@ export function SearchBar({
         className={resolvePart("inputGroup", classNames)}
       >
         <InputGroup.Addon>
-          <MagnifyingGlassIcon size={16} className="text-kumo-subtle" />
+          <MagnifyingGlassIcon
+            size={16}
+            className="text-kumo-subtle"
+            aria-hidden="true"
+          />
         </InputGroup.Addon>
         <InputGroup.Input
           value={inputValue}

@@ -413,7 +413,11 @@ export function PasswordInput({
       </InputGroup>
 
       {validation && validation.rules.length > 0 && (
-        <ul className={resolvePart("checklist", classNames)}>
+        <ul
+          aria-live="polite"
+          aria-label="Password requirements"
+          className={resolvePart("checklist", classNames)}
+        >
           {validation.rules.map((rule) => (
             <li
               key={rule.label}

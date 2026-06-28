@@ -803,7 +803,7 @@ export function Pagination({
   };
 
   return (
-    <div className={resolvePart("root", classNames)}>
+    <nav aria-label="Pagination" className={resolvePart("root", classNames)}>
       {controls === "range" ? (
         <RangePagination {...internalProps} />
       ) : shouldUseCompoundLayout(pageSizeOptions, pageSelector) ? (
@@ -811,6 +811,6 @@ export function Pagination({
       ) : (
         <NativePagination {...internalProps} controls={controls} />
       )}
-    </div>
+    </nav>
   );
 }
