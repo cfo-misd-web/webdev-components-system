@@ -116,6 +116,26 @@
           "target": "~/lib/pagination/validation.ts"
         }
       ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "A vertically stacked set of collapsible sections. Supports single and multiple open items, controlled and uncontrolled usage, and disabled items. Built as a compound component on Kumo's Collapsible.",
+      "registryDependencies": ["cn"],
+      "dependencies": ["@cloudflare/kumo", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/accordion.tsx"
+        },
+        {
+          "path": "registry/lib/accordion/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/accordion/validation.ts"
+        }
+      ]
     }
   ]
 }
