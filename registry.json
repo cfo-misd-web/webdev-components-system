@@ -4,16 +4,136 @@
   "homepage": "https://github.com/cfo-misd-web/webdev-components-system",
   "items": [
     {
+      "name": "cn",
+      "type": "registry:lib",
+      "title": "CN Utility",
+      "description": "Merges Tailwind CSS class names safely using clsx and tailwind-merge.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "types",
+      "type": "registry:lib",
+      "title": "Shared Types",
+      "description": "Shared TypeScript types used across registry components.",
+      "files": [
+        {
+          "path": "registry/lib/types.ts",
+          "type": "registry:lib",
+          "target": "~/lib/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "dom",
+      "type": "registry:lib",
+      "title": "DOM Utilities",
+      "description": "Shared pure functions for working with DOM events.",
+      "files": [
+        {
+          "path": "registry/lib/dom.ts",
+          "type": "registry:lib",
+          "target": "~/lib/dom.ts"
+        }
+      ]
+    },
+    {
       "name": "hello-world",
       "type": "registry:component",
       "title": "Hello World",
       "description": "A starter component that verifies the registry is wired up correctly.",
-      "registryDependencies": ["button"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react"],
       "files": [
         {
           "path": "registry/ui/hello-world.tsx",
           "type": "registry:component",
           "target": "~/components/ui/hello-world.tsx"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:component",
+      "title": "Password Input",
+      "description": "A password input with show/hide toggle, built-in tooltip, and optional live validation ruleset checklist. Built on Kumo UI components.",
+      "registryDependencies": ["cn", "dom"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/password-input.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/password-input.tsx"
+        },
+        {
+          "path": "registry/lib/password-input/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/password-input/validation.ts"
+        }
+      ]
+    },
+    {
+      "name": "search-bar",
+      "type": "registry:component",
+      "title": "Search Bar",
+      "description": "Search input that manages a URL search parameter. Router-agnostic via an adapter prop. Supports debouncing, clearable input, and server-side search callbacks.",
+      "registryDependencies": ["cn", "types", "dom"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/search-bar.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/search-bar.tsx"
+        },
+        {
+          "path": "registry/lib/search-bar/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/search-bar/validation.ts"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "Pagination control that manages a page URL parameter. Router-agnostic via an adapter prop. Supports client-side and server-side pagination with optional scroll reset.",
+      "registryDependencies": ["cn", "types"],
+      "dependencies": ["@cloudflare/kumo", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/pagination.tsx"
+        },
+        {
+          "path": "registry/lib/pagination/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/pagination/validation.ts"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "A vertically stacked set of collapsible sections. Supports single and multiple open items, controlled and uncontrolled usage, and disabled items. Built as a compound component on Kumo's Collapsible.",
+      "registryDependencies": ["cn"],
+      "dependencies": ["@cloudflare/kumo", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/accordion.tsx"
+        },
+        {
+          "path": "registry/lib/accordion/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/accordion/validation.ts"
         }
       ]
     }
