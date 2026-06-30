@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "webdev-components-system",
-  "homepage": "https://github.com/cfo-misd-web/webdev-components-system",
+  "name": "wcs",
+  "homepage": "https://github.com/cfo-misd-web/wcs",
   "items": [
     {
       "name": "cn",
