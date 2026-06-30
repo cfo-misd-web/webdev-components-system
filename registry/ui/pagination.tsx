@@ -11,8 +11,8 @@ import {
   buildParamsFromRaw,
   resolveNextPage,
 } from "@/lib/pagination/validation";
-import { cn } from "@/lib/cn";
-import type { ScrollBehavior } from "@/lib/types";
+import { cn } from "@/utils/cn";
+import type { ScrollBehavior } from "@/utils/types";
 
 // =============================================================================
 // TYPES

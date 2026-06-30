@@ -11,9 +11,9 @@
       "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
-          "path": "registry/lib/cn.ts",
+          "path": "registry/utils/cn.ts",
           "type": "registry:lib",
-          "target": "~/lib/cn.ts"
+          "target": "~/utils/cn.ts"
         }
       ]
     },
@@ -24,9 +24,9 @@
       "description": "Shared TypeScript types used across registry components.",
       "files": [
         {
-          "path": "registry/lib/types.ts",
+          "path": "registry/utils/types.ts",
           "type": "registry:lib",
-          "target": "~/lib/types.ts"
+          "target": "~/utils/types.ts"
         }
       ]
     },
@@ -37,9 +37,9 @@
       "description": "Shared pure functions for working with DOM events.",
       "files": [
         {
-          "path": "registry/lib/dom.ts",
+          "path": "registry/utils/dom.ts",
           "type": "registry:lib",
-          "target": "~/lib/dom.ts"
+          "target": "~/utils/dom.ts"
         }
       ]
     },
