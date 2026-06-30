@@ -4,9 +4,9 @@ import * as React from "react";
 import { InputGroup } from "@cloudflare/kumo";
 import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 import { createDebounce } from "@/lib/search-bar/validation";
-import { extractInputValue } from "@/lib/dom";
-import { cn } from "@/lib/cn";
-import type { ScrollBehavior } from "@/lib/types";
+import { extractInputValue } from "@/utils/dom";
+import { cn } from "@/utils/cn";
+import type { ScrollBehavior } from "@/utils/types";
 
 // =============================================================================
 // TYPES
