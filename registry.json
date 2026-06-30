@@ -62,7 +62,11 @@
       "type": "registry:component",
       "title": "Password Input",
       "description": "A password input with show/hide toggle, built-in tooltip, and optional live validation ruleset checklist. Built on Kumo UI components.",
-      "registryDependencies": ["cn", "dom"],
+      "registryDependencies": [
+        "cfo-misd-web/webdev-components-system/cn",
+        "cfo-misd-web/webdev-components-system/dom"
+      ],
+
       "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
       "files": [
         {
